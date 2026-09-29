@@ -1,0 +1,921 @@
+<?xml version="1.0" ?>
+<sdf version="1.11">
+<world name="winghead_gz">
+  <plugin
+            filename="gz-sim-physics-system"
+            name="gz::sim::systems::Physics">
+  </plugin>
+  <plugin
+            filename="gz-sim-user-commands-system"
+            name="gz::sim::systems::UserCommands">
+  </plugin>
+  <plugin
+            filename="gz-sim-scene-broadcaster-system"
+            name="gz::sim::systems::SceneBroadcaster">
+  </plugin>
+  <light type="directional" name="sun">
+    <pose>0 0 10 0 0 0</pose>
+    <diffuse>0.8 0.8 0.8 1</diffuse>
+    <specular>0.2 0.2 0.2 1</specular>
+    <attenuation>
+      <range>1000</range>
+      <constant>0.9</constant>
+      <linear>0.01</linear>
+      <quadratic>0.001</quadratic>
+    </attenuation>
+    <direction>-0.5 0.1 -0.9</direction>
+  </light>
+    <model name="ground_plane">
+            <static>true</static>
+            <link name="link">
+                <collision name="collision">
+                <geometry>
+                    <plane>
+                    <normal>0 0 1</normal>
+                    </plane>
+                </geometry>
+                </collision>
+                <visual name="visual">
+                <geometry>
+                    <plane>
+                    <normal>0 0 1</normal>
+                    <size>100 100</size>
+                    </plane>
+                </geometry>
+                <material>
+                    <ambient>0.8 0.8 0.8 1</ambient>
+                    <diffuse>0.8 0.8 0.8 1</diffuse>
+                    <specular>0.8 0.8 0.8 1</specular>
+                </material>
+                </visual>
+            </link>
+            <pose>0 0 0 0 0 0</pose>
+  </model>
+  <model name="winghead">
+    <link name="chassis_1">
+      <inertial>
+        <pose>-0.0465 0.000148 0.547636 0 0 0</pose>
+        <mass>45</mass>
+        <inertia>
+            <ixx>22.70</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>23.12</iyy>
+            <iyz>0.0</iyz>
+            <izz>6.49</izz>
+        </inertia>
+      </inertial>
+      <visual name="chassis_1__chassis_visual">
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/chassis_1/chassis_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0 0.278 0.671 1</ambient>
+          <diffuse>0 0.278 0.671 1</diffuse>
+          <specular>0.3 0.3 0.3 1</specular>
+        </material>
+      </visual>
+      
+      <collision name="chassis_1__chassis_collision">
+        <pose relative_to="__model__">0.029245375363109453 -3.180395711934183e-05 0.4548654965396329 0.00046196453675312354 -1.5673525349161304 3.141592653350924</pose>
+        <geometry>
+          <box>
+            <size>0.9631158330389892 0.9048489805843881 2.2880871478364986</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="aft_wing_right_1">
+      <pose relative_to="__model__">0.849350 -0.968215 0.918936 0.000000 1.570796 0.000000</pose>
+      <inertial>
+        <pose>-0.000000 0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
+        <mass>8.0</mass>
+          <inertia>
+            <ixx>0.845</ixx>
+            <iyy>0.061</iyy>
+            <izz>0.904</izz>
+            <ixy>0.0</ixy><ixz>0.0</ixz><iyz>0.0</iyz>
+          </inertia>
+      </inertial>
+      <visual name="aft_wing_right_1__aft_wing_visual">
+        <pose>-0.828156 1.067983 -0.901632 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/aft_wing_right_1/aft_wing_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="aft_wing_right_1__aft_wing_1_visual">
+        <pose>-0.828156 1.067983 -0.901632 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/aft_wing_right_1/aft_wing_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="aft_wing_right_1__aft_wing_2_visual">
+        <pose>-0.828156 1.067983 -0.901632 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/aft_wing_right_1/aft_wing_2_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="aft_wing_right_1__aft_wing_collision">
+        <pose relative_to="__model__">0.8586977524523941 -0.9623827316505649 0.9022208359023328 -5.034441824160033e-06 -1.558508883060747 -3.1415925414572845</pose>
+        <geometry>
+          <box>
+            <size>0.29996199051652994 1.1250001920699828 0.0390617474504792</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="aft_wing_left_1">
+      <pose relative_to="__model__">0.849350 0.968215 0.918936 0.0 1.570796 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>8.0</mass>
+          <inertia>
+            <ixx>0.845</ixx>
+            <iyy>0.061</iyy>
+            <izz>0.904</izz>
+            <ixy>0.0</ixy><ixz>0.0</ixz><iyz>0.0</iyz>
+          </inertia>
+      </inertial>
+      <visual name="aft_wing_left_1__aft_wing_1_visual">
+        <pose>-0.827952 -1.068215 -0.903784 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/aft_wing_left_1/aft_wing_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="aft_wing_left_1__aft_wing_1_collision">
+        <pose relative_to="__model__">0.8480267144525234 0.9626180709334945 0.9208881485809848 3.1323958564202847 -1.5485167709711412 -4.6304163886305793e-10</pose>
+        <geometry>
+          <box>
+            <size>0.34879427562790505 1.1253507346148408 0.053832441480406466</size>
+          </box>
+        </geometry> 
+      </collision>-->
+    </link>
+    <link name="fore_wing_right_1">
+      <pose relative_to="__model__"> -0.940443 -0.827363 0.428607 0.0 1.570796 0.0</pose>
+      <inertial>
+        <pose>0.000000 -0.000000 0.000000 0.000000 0.00 0.000000</pose>
+        <mass>8.0</mass>
+          <inertia>
+            <ixx>0.483</ixx>
+            <iyy>0.061</iyy>
+            <izz>0.542</izz>
+            <ixy>0.0</ixy>
+            <ixz>0.0</ixz>
+            <iyz>0.0</iyz>
+          </inertia>
+      </inertial>
+      <visual name="fore_wing_right_1__body2_visual">
+        <pose>0.979142 0.925251 -0.404756 -0.000000 0.0 0.00000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/fore_wing_right_1/body2_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="fore_wing_right_1__body3_visual">
+        <pose>0.979142 0.925251 -0.404756 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/fore_wing_right_1/body3_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="fore_wing_right_1__body4_visual">
+        <pose>0.979142 0.925251 -0.404756 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/fore_wing_right_1/body4_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="fore_wing_right_1__body2_collision">
+        <pose relative_to="__model__">-0.9413280534918127 -0.8248827552783962 0.39866121779621877 -3.141592653481416 -1.4993170743280373 1.0810082848456717e-10</pose>
+        <geometry>
+          <box>
+            <size>0.299960755956251 0.8500000381469706 0.04319905190020323</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="fore_wing_right_1__body3_collision">
+        <pose relative_to="__model__">-0.9471456782454077 -0.5863726533581086 0.5749937502188874 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="fore_wing_right_1__body4_collision">
+        <pose relative_to="__model__">-0.9471456782454077 -1.226372653358109 0.5749937502188877 -0.0 -1.5707963267948966 0</pose>
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.05</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="fore_wing_left_1">
+      <pose relative_to="__model__">-0.936209 0.827072 0.428597 0.000000 1.570796 0.000000</pose>
+      <inertial>
+        <pose> 0.000000 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
+        <mass>8.0</mass>
+        <inertia>
+          <ixx>0.483</ixx>
+          <iyy>0.061</iyy>
+          <izz>0.542</izz>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyz>0.0</iyz>
+        </inertia>
+      </inertial>
+      <visual name="fore_wing_left_1__body2_visual">
+        <pose>0.969158 -0.929680 -0.404755 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/fore_wing_left_1/body2_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="fore_wing_left_1__body3_visual">
+        <pose>0.969158 -0.929680 -0.404755 0.0 0.0 0.</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/fore_wing_left_1/body3_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <visual name="fore_wing_left_1__body4_visual">
+        <pose>0.969158 -0.929680 -0.404755 0.0 0.0 0.</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/fore_wing_left_1/body4_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.957 0.769 0.188 1</ambient>
+            <diffuse>0.957 0.769 0.188 1</diffuse>
+            <specular>0.2 0.2 0.2 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="fore_wing_left_1__body2_collision">
+        <pose relative_to="__model__">-0.937093625086048 0.8246219329845403 0.39863518248738106 -3.141592653481416 -1.4993170743280373 1.0810082848456714e-10</pose>
+        <geometry>
+          <box>
+            <size>0.299960755956251 0.8499999999999978 0.04319905190020323</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_left_fore_2_1_1">
+      <pose relative_to="__model__">-0.942911 1.225140 0.609356 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <pose>0.000000 -0f.000000 -0.000000 0.000000 0.000000 0.000000</pose>
+         <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_left_fore_2_1_1__proptest_22x13_2ccw_2_visual">
+        <pose>0.943254 -1.229114 -0.744824 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_left_fore_2_1_1/proptest_22x13_2ccw_2_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.05 0.05 0.05 1</ambient>
+            <diffuse>0.05 0.05 0.05 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_left_fore_2_1_1__proptest_22x13_2ccw_2_collision">
+        <pose relative_to="__model__">-0.9429142129595245 1.2251437836174344 0.6078736062781439 -2.902423118111844 -1.5704523382805815 0.2390588516081286</pose>
+        <geometry>
+          <box>
+            <size>0.027037580682821204 0.5588216675154157 0.04236600770518579</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_right_fore_2_1_1">
+      <pose relative_to="__model__">-0.947145 -1.226365 0.608882 0.000000 0.000000 0.00000</pose>
+      <inertial>
+        <pose>-0.000000 0.000000 -0.000000 0.000000 0.000000 0.0000</pose>
+      <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_right_fore_2_1_1__proptest_22x13_2ccw_2_1_visual">
+        <pose>0.968253 1.320886 -0.744824 0.000000 0.000000 0.00000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_right_fore_2_1_1/proptest_22x13_2ccw_2_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.05 0.05 0.05 1</ambient>
+            <diffuse>0.05 0.05 0.05 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_right_fore_2_1_1__proptest_22x13_2ccw_2_1_collision">
+        <pose relative_to="__model__">-0.947148638676261 -1.226360809254792 0.607399641598863 -2.902423870269985 -1.5704523378860604 0.2390580791832531</pose>
+        <geometry>
+          <box>
+            <size>0.027037580669119668 0.5588215909686929 0.04236600781556746</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_right_aft_1_1_1">
+      <pose relative_to="__model__">0.853757 -0.859253 1.111223 0.0 0 0.0</pose>
+      <inertial>
+        <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
+        <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_right_aft_1_1_1__proptest_22x13_2ccw_2_1_1_visual">
+        <pose>-0.709803 0.853122 -1.287205 0.0 -0.056811 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_right_aft_1_1_1/proptest_22x13_2ccw_2_1_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.05 0.05 0.05 1</ambient>
+            <diffuse>0.05 0.05 0.05 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_right_aft_1_1_1__proptest_22x13_2ccw_2_1_1_collision">
+        <pose relative_to="__model__">0.8438378585945913 -0.8592486495257874 1.109722456855243 -0.0013299619274362367 -1.5143190163239586 3.140149673202091</pose>
+        <geometry>
+          <box>
+            <size>0.027037580669119734 0.558821590968693 0.04236600780712024</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_left_aft_1_1_1">
+      <pose relative_to="__model__">0.843757 0.859253 1.111223 0.0 -0.0 0.0</pose>
+      <inertial>
+        <pose>0.01 0.004 0 0 0 0</pose>
+        <mass>0.07616410250099517</mass>
+        <inertia>
+          <ixx>0.000949126615514384</ixx>
+          <ixy>-1.2866371675419874e-05</ixy>
+          <ixz>-1.0831993635385118e-10</ixz>
+          <iyy>7.257343861755139e-06</iyy>
+          <iyz>-1.119173462238443e-09</iyz>
+          <izz>0.0009530933730664132</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_left_aft_1_1_1__proptest_22x13_2ccw_2_1_1_1_visual">
+        <pose>-0.921868 -0.844357 -1.252513 0.0 0.0 0.0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_left_aft_1_1_1/proptest_22x13_2ccw_2_1_1_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <collision name="proptest_left_aft_1_1_1__proptest_22x13_2ccw_2_1_1_1_collision">
+        <pose relative_to="__model__">0.8536322375067447 0.8617785448258454 1.1020524138853787 -2.9024227822976547 -1.5704523384171136 0.2390591864704685</pose>
+        <geometry>
+          <box>
+            <size>0.027037580687858026 0.5588216675034943 0.04236600770653965</size>
+          </box>
+        </geometry>
+      </collision>
+    </link>
+    <link name="proptest_left_fore_1_1_1">
+      <pose relative_to="__model__">-0.942912 0.585129 0.609376 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <pose> 0 0 0 0 0 0</pose>
+ <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_left_fore_1_1_1__proptest_22x13_2_8_visual">
+        <pose>1.019290 -0.602797 -0.935177 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_left_fore_1_1_1/proptest_22x13_2_8_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+           <ambient>0.05 0.05 0.05 1</ambient>
+           <diffuse>0.05 0.05 0.05 1</diffuse>
+           <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_left_fore_1_1_1__proptest_22x13_2_8_collision">
+        <pose relative_to="__model__">-0.9429112872207192 0.5851191244396436 0.6078755512807263 -5.924289626573967e-05 -1.5707961575502392 0</pose>
+        <geometry>
+          <box>
+            <size>0.027041340164510288 0.558825033441429 0.0423793468968043</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_right_fore_1_1_1">
+      <pose relative_to="__model__">-0.947146 -0.586374 0.608902 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <pose>-0.000000 -0.000001 0.000000 0.000000 0.000000 0.000000</pose>
+   <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_right_fore_1_1_1__proptest_22x13_2_8_1_visual">
+        <pose>1.019290 0.797201 -0.935177 -0.000000 0.000000 -0.000000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_right_fore_1_1_1/proptest_22x13_2_8_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_right_fore_1_1_1__proptest_22x13_2_8_1_collision">
+        <pose relative_to="__model__">-0.9471457156264836 -0.586385582896779 0.6074015865895638 -5.9242896265739684e-05 -1.5707961575502392 0</pose>
+        <geometry>
+          <box>
+            <size>0.02704134016451036 0.5588250334414293 0.04237934689680416</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_right_aft_2_1_1">
+      <pose relative_to="__model__">0.853757 -1.499263 1.111223 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <pose>-0.000002 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
+        <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_right_aft_2_1_1__proptest_22x13_2_8_1_1_visual">
+        <pose>-0.810860 1.487202 -1.253240 0.000000 -0.056811 0.000000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_right_aft_2_1_1/proptest_22x13_2_8_1_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+            <ambient>0.05 0.05 0.05 1</ambient>
+            <diffuse>0.05 0.05 0.05 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_right_aft_2_1_1__proptest_22x13_2_8_1_1_collision">
+        <pose relative_to="__model__">0.8438406664613369 -1.499273232619226 1.1097245652232959 -5.9242664161206974e-05 -1.5139848686466775 -3.1415926533573137</pose>
+        <geometry>
+          <box>
+            <size>0.027041320800580734 0.5588249570994115 0.04237934689680416</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <link name="proptest_left_aft_2_2_1">
+      <pose relative_to="__model__">0.845031 1.499996 1.103548 0.000000 0.000000 0.000000</pose>
+      <inertial>
+        <pose>0.000000 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
+        <mass>0.07616409295472076</mass>
+        <inertia>
+          <ixx>0.0009491392005980537</ixx>
+          <ixy>-1.2845550592853472e-05</ixy>
+          <ixz>-2.2498057898612256e-07</ixz>
+          <iyy>7.257342840155667e-06</iyy>
+          <iyz>-7.316795649081609e-07</iyz>
+          <izz>0.0009530803547643379</izz>
+        </inertia>
+      </inertial>
+      <visual name="proptest_left_aft_2_2_1__proptest_22x13_2_8_1_1_1_visual">
+        <pose>-0.880710 -1.412798 -1.205178 0.000000 0.000000 0.000000</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>meshes/proptest_left_aft_2_2_1/proptest_22x13_2_8_1_1_1_visual.obj</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <ambient>0.05 0.05 0.05 1</ambient>
+          <diffuse>0.05 0.05 0.05 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+      </visual>
+      <!--<collision name="proptest_left_aft_2_2_1__proptest_22x13_2_8_1_1_1_collision">
+        <pose relative_to="__model__">0.845031876378508 1.4999858116112321 1.1020466913511446 -5.924289626573969e-05 -1.5707961575502392 0</pose>
+        <geometry>
+          <box>
+            <size>0.02704134016449757 0.558824957147484 0.04237934689680416</size>
+          </box>
+        </geometry>
+      </collision>-->
+    </link>
+    <!-- props joints-->
+    <joint name="revolute_0" type="revolute">
+      <pose relative_to="__model__">-0.9429112498396433 1.2251320539783144 0.6004677149100498 0.0 -0.0 0.0</pose>
+      <parent>fore_wing_left_1</parent>
+      <child>proptest_left_fore_2_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_1" type="revolute">
+      <pose relative_to="__model__">-0.9429112498396433 0.585132053978314 0.60046771491005 0.0 -0.0 0.0</pose>
+      <parent>fore_wing_left_1</parent>
+      <child>proptest_left_fore_1_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_2" type="revolute">
+      <pose relative_to="__model__">-0.9471456782454077 -0.5863726533581086 0.5999937502188877 0.0 -0.0 0.0</pose>
+      <parent>fore_wing_right_1</parent>
+      <child>proptest_right_fore_1_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_3" type="revolute">
+      <pose relative_to="__model__">-0.9471456782454077 -1.226372653358109  0.5999937502188873 0.0 -0.0 0.0</pose>
+      <parent>fore_wing_right_1</parent>
+      <child>proptest_right_fore_2_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-0 0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_4" type="revolute">
+      <pose relative_to="__model__">0.8450319137573244 1.4999987030029296 1.0946388549804684 0.0 -0.0 0.0</pose>
+      <parent>aft_wing_left_1</parent>
+      <child>proptest_left_aft_2_2_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_5" type="revolute">
+      <pose relative_to="__model__">0.8536352005004884 0.8617668151855468 1.0946465225219726 0.0 -0.0 0.0</pose>
+      <parent>aft_wing_left_1</parent>
+      <child>proptest_left_aft_1_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_6" type="revolute">
+      <pose relative_to="__model__">0.8542613274525557 -0.8592604173351595 1.1023286817692322 0.0 -0.0 0.0</pose>
+      <parent>aft_wing_right_1</parent>
+      <child>proptest_right_aft_1_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">-0 0 1</xyz>
+      </axis>
+    </joint>
+    <joint name="revolute_7" type="revolute">
+      <pose relative_to="__model__">0.8542613274525556 -1.4992604173351598 1.1023286817692324 0.0 -0.0 0.0</pose>
+      <parent>aft_wing_right_1</parent>
+      <child>proptest_right_aft_2_1_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0 0.0 1</xyz>
+      </axis>
+    </joint>
+
+
+    <!-- wing joints-->
+    <joint name="joint_fore_wing_right_1" type="revolute">
+      <pose relative_to="__model__">-0.9352297592163086 -0.3998827362060547 0.4000260353088379 0.0 -0.0 0.0</pose>
+      <parent>chassis_1</parent>
+      <child>fore_wing_right_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>0</lower>    <!--negative infinity-->
+          <upper>1.59</upper>     <!--positive infinity-->
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="joint_fore_wing_left_1" type="revolute">
+      <pose relative_to="__model__">-0.9352297592163086 0.3998827362060547 0.4000260353088379 0.0 -0.0 0.0</pose>
+      <parent>chassis_1</parent>
+      <child>fore_wing_left_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>0</lower>    <!--negative infinity-->
+          <upper>1.59</upper>     <!--positive infinity-->
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+      </axis>
+    </joint>
+      <joint name="joint_aft_wing_right_1" type="revolute">
+      <pose relative_to="__model__">0.8332691574096679 -0.3998827362060547 0.8997934341430665 0.0 -0.0 0.0</pose>
+      <parent>chassis_1</parent>
+      <child>aft_wing_right_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>0</lower>    <!--negative infinity-->
+          <upper>1.59</upper>     <!--positive infinity-->
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+      </axis>
+    </joint>
+    <joint name="joint_aft_wing_left_1" type="revolute">
+      <pose relative_to="__model__">0.8332691574096679 0.3998827362060547 0.8997934341430665 0.0 -0.0 0.0</pose>
+      <parent>chassis_1</parent>
+      <child>aft_wing_left_1</child>
+      <axis>
+        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <limit>
+          <lower>0</lower>    <!--negative infinity-->
+          <upper>1.59</upper>     <!--positive infinity-->
+          <effort>1000</effort>
+          <velocity>10</velocity>
+        </limit>
+      </axis>
+    </joint>
+    <!-- wing plugin-->
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>joint_aft_wing_left_1</joint_name>
+      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <p_gain>320</p_gain>
+      <i_gain>20</i_gain>
+      <d_gain>5.5</d_gain>
+    </plugin>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>joint_aft_wing_right_1</joint_name>
+      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <p_gain>320</p_gain>
+      <i_gain>20</i_gain>
+      <d_gain>5.5</d_gain>
+    </plugin>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>joint_fore_wing_left_1</joint_name>
+      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <p_gain>330</p_gain>
+      <i_gain>20</i_gain>
+      <d_gain>5.5</d_gain>
+    </plugin>
+    <plugin filename="gz-sim-joint-position-controller-system"
+            name="gz::sim::systems::JointPositionController">
+      <joint_name>joint_fore_wing_right_1</joint_name>
+      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <p_gain>330</p_gain>
+      <i_gain>20</i_gain>
+      <d_gain>5.5</d_gain>
+    </plugin>
+    <!-- multicopter plugin -->
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_0</jointName>
+      <linkName>proptest_left_fore_2_1_1</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
+      <actuator_number>0</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_1</jointName>
+      <linkName>proptest_left_fore_1_1_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>1</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_2</jointName>
+      <linkName>proptest_right_fore_1_1_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>2</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_3</jointName>
+      <linkName>proptest_right_fore_2_1_1</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>3</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_4</jointName>
+      <linkName>proptest_left_aft_2_2_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>4</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_5</jointName>
+      <linkName>proptest_left_aft_1_1_1</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>5</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_6</jointName>
+      <linkName>proptest_right_aft_1_1_1</linkName>
+      <turningDirection>cw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>6</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+    <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
+      <jointName>revolute_7</jointName>
+      <linkName>proptest_right_aft_2_1_1</linkName>
+      <turningDirection>ccw</turningDirection>
+      <timeConstantUp>0.0125</timeConstantUp>
+      <timeConstantDown>0.025</timeConstantDown>
+      <maxRotVelocity>2000</maxRotVelocity>
+      <motorConstant>8.5e-05</motorConstant>
+      <momentConstant>0.06</momentConstant>
+      <commandSubTopic>command/motor_speed</commandSubTopic>
+      <actuator_number>7</actuator_number>
+      <rotorDragCoefficient>8.06428e-05</rotorDragCoefficient>
+      <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
+      <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
+      <robotNamespace>winghead_gz</robotNamespace>
+    </plugin>
+</model>
+</world>
+
+</sdf>
