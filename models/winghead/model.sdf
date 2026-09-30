@@ -1,72 +1,6 @@
 <?xml version="1.0" ?>
 <sdf version="1.11">
-<world name="winghead_gz">
-  <physics name="1ms" type="dart">
-    <max_step_size>0.001</max_step_size>
-    <real_time_factor>1.0</real_time_factor>
-    <dart>
-      <solver>
-        <type>quick</type>
-        <iters>200</iters>
-        <sor>1.0</sor>
-      </solver>
-      <constraints>
-        <cfm>0.0</cfm>
-        <erp>0.2</erp>
-      </constraints>
-    </dart>
-  </physics>
-  <plugin
-            filename="gz-sim-physics-system"
-            name="gz::sim::systems::Physics">
-  </plugin>
-  <plugin
-            filename="gz-sim-user-commands-system"
-            name="gz::sim::systems::UserCommands">
-  </plugin>
-  <plugin
-            filename="gz-sim-scene-broadcaster-system"
-            name="gz::sim::systems::SceneBroadcaster">
-  </plugin>
-  <light type="directional" name="sun">
-    <pose>0 0 10 0 0 0</pose>
-    <diffuse>0.8 0.8 0.8 1</diffuse>
-    <specular>0.2 0.2 0.2 1</specular>
-    <attenuation>
-      <range>1000</range>
-      <constant>0.9</constant>
-      <linear>0.01</linear>
-      <quadratic>0.001</quadratic>
-    </attenuation>
-    <direction>-0.5 0.1 -0.9</direction>
-  </light>
-    <model name="ground_plane">
-            <static>true</static>
-            <link name="link">
-                <collision name="collision">
-                <geometry>
-                    <plane>
-                    <normal>0 0 1</normal>
-                    </plane>
-                </geometry>
-                </collision>
-                <visual name="visual">
-                <geometry>
-                    <plane>
-                    <normal>0 0 1</normal>
-                    <size>100 100</size>
-                    </plane>
-                </geometry>
-                <material>
-                    <ambient>0.8 0.8 0.8 1</ambient>
-                    <diffuse>0.8 0.8 0.8 1</diffuse>
-                    <specular>0.8 0.8 0.8 1</specular>
-                </material>
-                </visual>
-            </link>
-            <pose>0 0 0 0 0 0</pose>
-  </model>
-  <model name="winghead">
+<model name="winghead">
     <link name="chassis_1">
       <inertial>
         <pose>-0.0465 0.000148 0.547636 0 0 0</pose>
@@ -93,7 +27,7 @@
           <specular>0.3 0.3 0.3 1</specular>
         </material>
       </visual>
-      
+
       <collision name="chassis_1__chassis_collision">
         <pose relative_to="__model__">0.029245375363109453 -3.180395711934183e-05 0.4548654965396329 0.00046196453675312354 -1.5673525349161304 3.141592653350924</pose>
         <geometry>
@@ -198,7 +132,7 @@
           <box>
             <size>0.34879427562790505 1.1253507346148408 0.053832441480406466</size>
           </box>
-        </geometry> 
+        </geometry>
       </collision>-->
     </link>
     <link name="fore_wing_right_1">
@@ -932,15 +866,6 @@
     </plugin>
       <plugin filename="gz-sim-joint-state-publisher-system"
           name="gz::sim::systems::JointStatePublisher"/>
-    <!--<plugin
-     filename="libMotorSpeedLogger.so"
-      name="motor_speed_logger::MotorSpeedLogger">
-      <csv_file>motor_speed_log.csv</csv_file>
-    </plugin>-->
-    <!--<plugin filename="libForceWrenchVisualizer.so"
-        name="force_wrench_visualizer::ForceWrenchVisualizer">
-    </plugin>-->
 </model>
-</world>
 
 </sdf>
