@@ -2,7 +2,7 @@
 <sdf version="1.11">
 <model name="winghead">
 
-    <link name="chassis_1">
+    <link name="base_link">
       <inertial>
         <pose>-0.0465 0.000148 0.547636 0 0 0</pose>
         <mass>45</mass>
@@ -135,6 +135,39 @@
         <update_rate>30</update_rate>
       </sensor>
     </link>
+
+    <link name="airspeed_link">
+    <pose relative_to="base_link">0 0 0 0 0 0</pose>
+    <inertial>
+      <mass>0.001</mass>
+      <inertia>
+         <ixx>1e-6</ixx>
+         <iyy>1e-6</iyy>
+         <izz>1e-6</izz>
+         <ixy>0</ixy>
+         <ixz>0</ixz>
+         <iyz>0</iyz>
+      </inertia>
+    </inertial>
+    <sensor name="air_speed" type="air_speed">
+      <always_on>1</always_on>
+      <update_rate>10</update_rate>
+      <air_speed>
+        <pressure>
+          <noise type="gaussian">
+            <mean>0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+        </pressure>
+      </air_speed>
+    </sensor>
+  </link>
+
+  <joint name="airspeed_joint" type="fixed">
+    <parent>base_link</parent>
+    <child>airspeed_link</child>
+  </joint>
+
     <link name="aft_wing_right_1">
       <pose relative_to="__model__">0.849350 -0.968215 0.918936 0.000000 1.570796 0.000000</pose>
       <inertial>
@@ -745,7 +778,7 @@
     <!-- wing joints-->
     <joint name="joint_fore_wing_right_1" type="revolute">
       <pose relative_to="__model__">-0.9352297592163086 -0.3998827362060547 0.4000260353088379 0.0 -0.0 0.0</pose>
-      <parent>chassis_1</parent>
+      <parent>base_link</parent>
       <child>fore_wing_right_1</child>
       <axis>
         <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
@@ -759,7 +792,7 @@
     </joint>
     <joint name="joint_fore_wing_left_1" type="revolute">
       <pose relative_to="__model__">-0.9352297592163086 0.3998827362060547 0.4000260353088379 0.0 -0.0 0.0</pose>
-      <parent>chassis_1</parent>
+      <parent>base_link</parent>
       <child>fore_wing_left_1</child>
       <axis>
         <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
@@ -773,7 +806,7 @@
     </joint>
       <joint name="joint_aft_wing_right_1" type="revolute">
       <pose relative_to="__model__">0.8332691574096679 -0.3998827362060547 0.8997934341430665 0.0 -0.0 0.0</pose>
-      <parent>chassis_1</parent>
+      <parent>base_link</parent>
       <child>aft_wing_right_1</child>
       <axis>
         <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
@@ -787,7 +820,7 @@
     </joint>
     <joint name="joint_aft_wing_left_1" type="revolute">
       <pose relative_to="__model__">0.8332691574096679 0.3998827362060547 0.8997934341430665 0.0 -0.0 0.0</pose>
-      <parent>chassis_1</parent>
+      <parent>base_link</parent>
       <child>aft_wing_left_1</child>
       <axis>
         <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
