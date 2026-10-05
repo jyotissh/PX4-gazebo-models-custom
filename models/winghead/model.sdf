@@ -4,7 +4,7 @@
 
     <link name="base_link">
       <inertial>
-        <pose>-0.0465 0.000148 0.547636 0 0 0</pose>
+        <pose>0.0465 -0.000148 0.547636 0 0 0</pose>
         <mass>45</mass>
         <inertia>
             <ixx>22.70</ixx>
@@ -16,6 +16,7 @@
         </inertia>
       </inertial>
       <visual name="chassis_1__chassis_visual">
+        <pose>0 0 0 0 0 3.14159265359</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -30,7 +31,7 @@
       </visual>
 
       <collision name="chassis_1__chassis_collision">
-        <pose relative_to="__model__">0.029245375363109453 -3.180395711934183e-05 0.4548654965396329 0.00046196453675312354 -1.5673525349161304 3.141592653350924</pose>
+        <pose relative_to="__model__">-0.029245375 3.1804e-05 0.454865497 0.000461965 -1.567352535 0.0</pose>
         <geometry>
           <box>
             <size>0.9631158330389892 0.9048489805843881 2.2880871478364986</size>
@@ -62,17 +63,17 @@
           <!-- Noise modeled after IIS2MDC -->
           <x>
             <noise type="gaussian">
-              <stddev>0.0001</stddev>
+              <stddev>0.000001</stddev>
             </noise>
           </x>
           <y>
             <noise type="gaussian">
-              <stddev>0.0001</stddev>
+              <stddev>0.00001</stddev>
             </noise>
           </y>
           <z>
             <noise type="gaussian">
-              <stddev>0.0001</stddev>
+              <stddev>0.00001</stddev>
             </noise>
           </z>
         </magnetometer>
@@ -169,7 +170,7 @@
   </joint>
 
     <link name="aft_wing_right_1">
-      <pose relative_to="__model__">0.849350 -0.968215 0.918936 0.000000 1.570796 0.000000</pose>
+      <pose relative_to="__model__">-0.84935 0.968215 0.918936 0.0 1.570796 3.141592654</pose>
       <inertial>
         <pose>-0.000000 0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
         <mass>8.0</mass>
@@ -223,7 +224,7 @@
         </material>
       </visual>
       <!--<collision name="aft_wing_right_1__aft_wing_collision">
-        <pose relative_to="__model__">0.8586977524523941 -0.9623827316505649 0.9022208359023328 -5.034441824160033e-06 -1.558508883060747 -3.1415925414572845</pose>
+        <pose relative_to="__model__">-0.858697752 0.962382732 0.902220836 -5.034e-06 -1.558508883 1.12e-07</pose>
         <geometry>
           <box>
             <size>0.29996199051652994 1.1250001920699828 0.0390617474504792</size>
@@ -232,7 +233,7 @@
       </collision>-->
     </link>
     <link name="aft_wing_left_1">
-      <pose relative_to="__model__">0.849350 0.968215 0.918936 0.0 1.570796 0.0</pose>
+      <pose relative_to="__model__">-0.84935 -0.968215 0.918936 0.0 1.570796 3.141592654</pose>
       <inertial>
         <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
         <mass>8.0</mass>
@@ -258,7 +259,7 @@
         </material>
       </visual>
       <!--<collision name="aft_wing_left_1__aft_wing_1_collision">
-        <pose relative_to="__model__">0.8480267144525234 0.9626180709334945 0.9208881485809848 3.1323958564202847 -1.5485167709711412 -4.6304163886305793e-10</pose>
+        <pose relative_to="__model__">-0.848026714 -0.962618071 0.920888149 3.132395856 -1.548516771 3.141592653</pose>
         <geometry>
           <box>
             <size>0.34879427562790505 1.1253507346148408 0.053832441480406466</size>
@@ -267,7 +268,7 @@
       </collision>-->
     </link>
     <link name="fore_wing_right_1">
-      <pose relative_to="__model__"> -0.940443 -0.827363 0.428607 0.0 1.570796 0.0</pose>
+      <pose relative_to="__model__">0.940443 0.827363 0.428607 0.0 1.570796 3.141592654</pose>
       <inertial>
         <pose>0.000000 -0.000000 0.000000 0.000000 0.00 0.000000</pose>
         <mass>8.0</mass>
@@ -323,7 +324,7 @@
         </material>
       </visual>
       <!--<collision name="fore_wing_right_1__body2_collision">
-        <pose relative_to="__model__">-0.9413280534918127 -0.8248827552783962 0.39866121779621877 -3.141592653481416 -1.4993170743280373 1.0810082848456717e-10</pose>
+        <pose relative_to="__model__">0.941328053 0.824882755 0.398661218 -3.141592653 -1.499317074 -3.141592653</pose>
         <geometry>
           <box>
             <size>0.299960755956251 0.8500000381469706 0.04319905190020323</size>
@@ -331,7 +332,7 @@
         </geometry>
       </collision>
       <collision name="fore_wing_right_1__body3_collision">
-        <pose relative_to="__model__">-0.9471456782454077 -0.5863726533581086 0.5749937502188874 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="__model__">0.947145678 0.586372653 0.57499375 0.0 -1.570796327 3.141592654</pose>
         <geometry>
           <box>
             <size>0.05 0.05 0.05</size>
@@ -339,7 +340,7 @@
         </geometry>
       </collision>
       <collision name="fore_wing_right_1__body4_collision">
-        <pose relative_to="__model__">-0.9471456782454077 -1.226372653358109 0.5749937502188877 -0.0 -1.5707963267948966 0</pose>
+        <pose relative_to="__model__">0.947145678 1.226372653 0.57499375 0.0 -1.570796327 3.141592654</pose>
         <geometry>
           <box>
             <size>0.05 0.05 0.05</size>
@@ -348,7 +349,7 @@
       </collision>-->
     </link>
     <link name="fore_wing_left_1">
-      <pose relative_to="__model__">-0.936209 0.827072 0.428597 0.000000 1.570796 0.000000</pose>
+      <pose relative_to="__model__">0.936209 -0.827072 0.428597 0.0 1.570796 3.141592654</pose>
       <inertial>
         <pose> 0.000000 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
         <mass>8.0</mass>
@@ -404,7 +405,7 @@
         </material>
       </visual>
       <!--<collision name="fore_wing_left_1__body2_collision">
-        <pose relative_to="__model__">-0.937093625086048 0.8246219329845403 0.39863518248738106 -3.141592653481416 -1.4993170743280373 1.0810082848456714e-10</pose>
+        <pose relative_to="__model__">0.937093625 -0.824621933 0.398635182 -3.141592653 -1.499317074 -3.141592653</pose>
         <geometry>
           <box>
             <size>0.299960755956251 0.8499999999999978 0.04319905190020323</size>
@@ -413,7 +414,7 @@
       </collision>-->
     </link>
     <link name="proptest_left_fore_2_1_1">
-      <pose relative_to="__model__">-0.942911 1.225140 0.609356 0.000000 0.000000 0.000000</pose>
+      <pose relative_to="__model__">0.942911 -1.22514 0.609356 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>0.000000 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
          <mass>0.07616409295472076</mass>
@@ -441,7 +442,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_left_fore_2_1_1__proptest_22x13_2ccw_2_collision">
-        <pose relative_to="__model__">-0.9429142129595245 1.2251437836174344 0.6078736062781439 -2.902423118111844 -1.5704523382805815 0.2390588516081286</pose>
+        <pose relative_to="__model__">0.942914213 -1.225143784 0.607873606 -2.902423118 -1.570452338 -2.902533802</pose>
         <geometry>
           <box>
             <size>0.027037580682821204 0.5588216675154157 0.04236600770518579</size>
@@ -450,7 +451,7 @@
       </collision>-->
     </link>
     <link name="proptest_right_fore_2_1_1">
-      <pose relative_to="__model__">-0.947145 -1.226365 0.608882 0.000000 0.000000 0.00000</pose>
+      <pose relative_to="__model__">0.947145 1.226365 0.608882 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>-0.000000 0.000000 -0.000000 0.000000 0.000000 0.0000</pose>
       <mass>0.07616409295472076</mass>
@@ -478,7 +479,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_right_fore_2_1_1__proptest_22x13_2ccw_2_1_collision">
-        <pose relative_to="__model__">-0.947148638676261 -1.226360809254792 0.607399641598863 -2.902423870269985 -1.5704523378860604 0.2390580791832531</pose>
+        <pose relative_to="__model__">0.947148639 1.226360809 0.607399642 -2.90242387 -1.570452338 -2.902534574</pose>
         <geometry>
           <box>
             <size>0.027037580669119668 0.5588215909686929 0.04236600781556746</size>
@@ -487,7 +488,7 @@
       </collision>-->
     </link>
     <link name="proptest_right_aft_1_1_1">
-      <pose relative_to="__model__">0.853757 -0.859253 1.111223 0.0 0 0.0</pose>
+      <pose relative_to="__model__">-0.853757 0.859253 1.111223 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>0.0 0.0 0.0 0.0 0.0 0.0</pose>
         <mass>0.07616409295472076</mass>
@@ -515,7 +516,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_right_aft_1_1_1__proptest_22x13_2ccw_2_1_1_collision">
-        <pose relative_to="__model__">0.8438378585945913 -0.8592486495257874 1.109722456855243 -0.0013299619274362367 -1.5143190163239586 3.140149673202091</pose>
+        <pose relative_to="__model__">-0.843837859 0.85924865 1.109722457 -0.001329962 -1.514319016 -0.00144298</pose>
         <geometry>
           <box>
             <size>0.027037580669119734 0.558821590968693 0.04236600780712024</size>
@@ -524,7 +525,7 @@
       </collision>-->
     </link>
     <link name="proptest_left_aft_1_1_1">
-      <pose relative_to="__model__">0.843757 0.859253 1.111223 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.843757 -0.859253 1.111223 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>0.01 0.004 0 0 0 0</pose>
         <mass>0.07616410250099517</mass>
@@ -552,7 +553,7 @@
         </material>
       </visual>
       <collision name="proptest_left_aft_1_1_1__proptest_22x13_2ccw_2_1_1_1_collision">
-        <pose relative_to="__model__">0.8536322375067447 0.8617785448258454 1.1020524138853787 -2.9024227822976547 -1.5704523384171136 0.2390591864704685</pose>
+        <pose relative_to="__model__">-0.853632238 -0.861778545 1.102052414 -2.902422782 -1.570452338 -2.902533467</pose>
         <geometry>
           <box>
             <size>0.027037580687858026 0.5588216675034943 0.04236600770653965</size>
@@ -561,7 +562,7 @@
       </collision>
     </link>
     <link name="proptest_left_fore_1_1_1">
-      <pose relative_to="__model__">-0.942912 0.585129 0.609376 0.000000 0.000000 0.000000</pose>
+      <pose relative_to="__model__">0.942912 -0.585129 0.609376 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose> 0 0 0 0 0 0</pose>
  <mass>0.07616409295472076</mass>
@@ -589,7 +590,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_left_fore_1_1_1__proptest_22x13_2_8_collision">
-        <pose relative_to="__model__">-0.9429112872207192 0.5851191244396436 0.6078755512807263 -5.924289626573967e-05 -1.5707961575502392 0</pose>
+        <pose relative_to="__model__">0.942911287 -0.585119124 0.607875551 -5.9243e-05 -1.570796158 3.141592654</pose>
         <geometry>
           <box>
             <size>0.027041340164510288 0.558825033441429 0.0423793468968043</size>
@@ -598,7 +599,7 @@
       </collision>-->
     </link>
     <link name="proptest_right_fore_1_1_1">
-      <pose relative_to="__model__">-0.947146 -0.586374 0.608902 0.000000 0.000000 0.000000</pose>
+      <pose relative_to="__model__">0.947146 0.586374 0.608902 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>-0.000000 -0.000001 0.000000 0.000000 0.000000 0.000000</pose>
    <mass>0.07616409295472076</mass>
@@ -626,7 +627,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_right_fore_1_1_1__proptest_22x13_2_8_1_collision">
-        <pose relative_to="__model__">-0.9471457156264836 -0.586385582896779 0.6074015865895638 -5.9242896265739684e-05 -1.5707961575502392 0</pose>
+        <pose relative_to="__model__">0.947145716 0.586385583 0.607401587 -5.9243e-05 -1.570796158 3.141592654</pose>
         <geometry>
           <box>
             <size>0.02704134016451036 0.5588250334414293 0.04237934689680416</size>
@@ -635,7 +636,7 @@
       </collision>-->
     </link>
     <link name="proptest_right_aft_2_1_1">
-      <pose relative_to="__model__">0.853757 -1.499263 1.111223 0.000000 0.000000 0.000000</pose>
+      <pose relative_to="__model__">-0.853757 1.499263 1.111223 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>-0.000002 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
         <mass>0.07616409295472076</mass>
@@ -663,7 +664,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_right_aft_2_1_1__proptest_22x13_2_8_1_1_collision">
-        <pose relative_to="__model__">0.8438406664613369 -1.499273232619226 1.1097245652232959 -5.9242664161206974e-05 -1.5139848686466775 -3.1415926533573137</pose>
+        <pose relative_to="__model__">-0.843840666 1.499273233 1.109724565 -5.9243e-05 -1.513984869 0.0</pose>
         <geometry>
           <box>
             <size>0.027041320800580734 0.5588249570994115 0.04237934689680416</size>
@@ -672,7 +673,7 @@
       </collision>-->
     </link>
     <link name="proptest_left_aft_2_2_1">
-      <pose relative_to="__model__">0.845031 1.499996 1.103548 0.000000 0.000000 0.000000</pose>
+      <pose relative_to="__model__">-0.845031 -1.499996 1.103548 0.0 0.0 3.141592654</pose>
       <inertial>
         <pose>0.000000 -0.000000 -0.000000 0.000000 0.000000 0.000000</pose>
         <mass>0.07616409295472076</mass>
@@ -700,7 +701,7 @@
         </material>
       </visual>
       <!--<collision name="proptest_left_aft_2_2_1__proptest_22x13_2_8_1_1_1_collision">
-        <pose relative_to="__model__">0.845031876378508 1.4999858116112321 1.1020466913511446 -5.924289626573969e-05 -1.5707961575502392 0</pose>
+        <pose relative_to="__model__">-0.845031876 -1.499985812 1.102046691 -5.9243e-05 -1.570796158 3.141592654</pose>
         <geometry>
           <box>
             <size>0.02704134016449757 0.558824957147484 0.04237934689680416</size>
@@ -710,78 +711,78 @@
     </link>
     <!-- props joints-->
     <joint name="revolute_0" type="revolute">
-      <pose relative_to="__model__">-0.9429112498396433 1.2251320539783144 0.6004677149100498 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">0.94291125 -1.225132054 0.600467715 0.0 0.0 3.141592654</pose>
       <parent>fore_wing_left_1</parent>
       <child>proptest_left_fore_2_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_1" type="revolute">
-      <pose relative_to="__model__">-0.9429112498396433 0.585132053978314 0.60046771491005 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">0.94291125 -0.585132054 0.600467715 0.0 0.0 3.141592654</pose>
       <parent>fore_wing_left_1</parent>
       <child>proptest_left_fore_1_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_2" type="revolute">
-      <pose relative_to="__model__">-0.9471456782454077 -0.5863726533581086 0.5999937502188877 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">0.947145678 0.586372653 0.59999375 0.0 0.0 3.141592654</pose>
       <parent>fore_wing_right_1</parent>
       <child>proptest_right_fore_1_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_3" type="revolute">
-      <pose relative_to="__model__">-0.9471456782454077 -1.226372653358109  0.5999937502188873 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">0.947145678 1.226372653 0.59999375 0.0 0.0 3.141592654</pose>
       <parent>fore_wing_right_1</parent>
       <child>proptest_right_fore_2_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">-0 0 1.0</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_4" type="revolute">
-      <pose relative_to="__model__">0.8450319137573244 1.4999987030029296 1.0946388549804684 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.845031914 -1.499998703 1.094638855 0.0 0.0 3.141592654</pose>
       <parent>aft_wing_left_1</parent>
       <child>proptest_left_aft_2_2_1</child>
       <axis>
-        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_5" type="revolute">
-      <pose relative_to="__model__">0.8536352005004884 0.8617668151855468 1.0946465225219726 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.853635201 -0.861766815 1.094646523 0.0 0.0 3.141592654</pose>
       <parent>aft_wing_left_1</parent>
       <child>proptest_left_aft_1_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0 0.0 1.0</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_6" type="revolute">
-      <pose relative_to="__model__">0.8542613274525557 -0.8592604173351595 1.1023286817692322 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.854261327 0.859260417 1.102328682 0.0 0.0 3.141592654</pose>
       <parent>aft_wing_right_1</parent>
       <child>proptest_right_aft_1_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">-0 0 1</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
     <joint name="revolute_7" type="revolute">
-      <pose relative_to="__model__">0.8542613274525556 -1.4992604173351598 1.1023286817692324 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.854261327 1.499260417 1.102328682 0.0 0.0 3.141592654</pose>
       <parent>aft_wing_right_1</parent>
       <child>proptest_right_aft_2_1_1</child>
       <axis>
-        <xyz expressed_in="__model__">0 0.0 1</xyz>
+        <xyz expressed_in="__model__">0.0 0.0 1.0</xyz>
       </axis>
     </joint>
 
 
     <!-- wing joints-->
     <joint name="joint_fore_wing_right_1" type="revolute">
-      <pose relative_to="__model__">-0.9352297592163086 -0.3998827362060547 0.4000260353088379 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">0.935229759 0.399882736 0.400026035 0.0 0.0 3.141592654</pose>
       <parent>base_link</parent>
       <child>fore_wing_right_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
         <limit>
           <lower>0</lower>    <!--negative infinity-->
           <upper>1.59</upper>     <!--positive infinity-->
@@ -791,11 +792,11 @@
       </axis>
     </joint>
     <joint name="joint_fore_wing_left_1" type="revolute">
-      <pose relative_to="__model__">-0.9352297592163086 0.3998827362060547 0.4000260353088379 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">0.935229759 -0.399882736 0.400026035 0.0 0.0 3.141592654</pose>
       <parent>base_link</parent>
       <child>fore_wing_left_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
         <limit>
           <lower>0</lower>    <!--negative infinity-->
           <upper>1.59</upper>     <!--positive infinity-->
@@ -805,11 +806,11 @@
       </axis>
     </joint>
       <joint name="joint_aft_wing_right_1" type="revolute">
-      <pose relative_to="__model__">0.8332691574096679 -0.3998827362060547 0.8997934341430665 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.833269157 0.399882736 0.899793434 0.0 0.0 3.141592654</pose>
       <parent>base_link</parent>
       <child>aft_wing_right_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
         <limit>
           <lower>0</lower>    <!--negative infinity-->
           <upper>1.59</upper>     <!--positive infinity-->
@@ -819,11 +820,11 @@
       </axis>
     </joint>
     <joint name="joint_aft_wing_left_1" type="revolute">
-      <pose relative_to="__model__">0.8332691574096679 0.3998827362060547 0.8997934341430665 0.0 -0.0 0.0</pose>
+      <pose relative_to="__model__">-0.833269157 -0.399882736 0.899793434 0.0 0.0 3.141592654</pose>
       <parent>base_link</parent>
       <child>aft_wing_left_1</child>
       <axis>
-        <xyz expressed_in="__model__">0.0 -1.0 0.0</xyz>
+        <xyz expressed_in="__model__">0.0 1.0 0.0</xyz>
         <limit>
           <lower>0</lower>    <!--negative infinity-->
           <upper>1.59</upper>     <!--positive infinity-->
@@ -873,7 +874,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <motorSpeedPubTopic>motor_speed/0</motorSpeedPubTopic>
@@ -890,7 +891,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>1</actuator_number>
@@ -906,7 +907,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>2</actuator_number>
@@ -922,7 +923,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>3</actuator_number>
@@ -938,7 +939,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>4</actuator_number>
@@ -954,7 +955,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>5</actuator_number>
@@ -970,7 +971,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>6</actuator_number>
@@ -986,7 +987,7 @@
       <timeConstantUp>0.0125</timeConstantUp>
       <timeConstantDown>0.025</timeConstantDown>
       <maxRotVelocity>2000</maxRotVelocity>
-      <motorConstant>8.5e-05</motorConstant>
+      <motorConstant>8.5e-04</motorConstant>
       <momentConstant>0.06</momentConstant>
       <commandSubTopic>command/motor_speed</commandSubTopic>
       <actuator_number>7</actuator_number>
