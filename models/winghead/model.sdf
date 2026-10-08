@@ -68,12 +68,12 @@
           </x>
           <y>
             <noise type="gaussian">
-              <stddev>0.00001</stddev>
+              <stddev>0.000001</stddev>
             </noise>
           </y>
           <z>
             <noise type="gaussian">
-              <stddev>0.00001</stddev>
+              <stddev>0.000001</stddev>
             </noise>
           </z>
         </magnetometer>
@@ -552,14 +552,14 @@
           <specular>0.1 0.1 0.1 1</specular>
         </material>
       </visual>
-      <collision name="proptest_left_aft_1_1_1__proptest_22x13_2ccw_2_1_1_1_collision">
+      <!--<collision name="proptest_left_aft_1_1_1__proptest_22x13_2ccw_2_1_1_1_collision">
         <pose relative_to="__model__">-0.853632238 -0.861778545 1.102052414 -2.902422782 -1.570452338 -2.902533467</pose>
         <geometry>
           <box>
             <size>0.027037580687858026 0.5588216675034943 0.04236600770653965</size>
           </box>
         </geometry>
-      </collision>
+      </collision>-->
     </link>
     <link name="proptest_left_fore_1_1_1">
       <pose relative_to="__model__">0.942912 -0.585129 0.609376 0.0 0.0 3.141592654</pose>
@@ -837,7 +837,9 @@
     <plugin filename="gz-sim-joint-position-controller-system"
             name="gz::sim::systems::JointPositionController">
       <joint_name>joint_aft_wing_left_1</joint_name>
-      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <!--<topic>/model/winghead/aft_wing/cmd_pos</topic>-->
+      <sub_topic>servo_0</sub_topic>
+      <robotNamespace>winghead_0</robotNamespace>
       <p_gain>320</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
@@ -845,7 +847,8 @@
     <plugin filename="gz-sim-joint-position-controller-system"
             name="gz::sim::systems::JointPositionController">
       <joint_name>joint_aft_wing_right_1</joint_name>
-      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <!--<topic>/model/winghead/aft_wing/cmd_pos</topic>-->
+      <sub_topic>servo_0</sub_topic>
       <p_gain>320</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
@@ -853,7 +856,8 @@
     <plugin filename="gz-sim-joint-position-controller-system"
             name="gz::sim::systems::JointPositionController">
       <joint_name>joint_fore_wing_left_1</joint_name>
-      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <sub_topic>servo_0</sub_topic>
+      <!--<topic>/model/winghead/fore_wing/cmd_pos</topic>-->
       <p_gain>330</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
@@ -861,7 +865,8 @@
     <plugin filename="gz-sim-joint-position-controller-system"
             name="gz::sim::systems::JointPositionController">
       <joint_name>joint_fore_wing_right_1</joint_name>
-      <topic>/model/winghead/fore_wing/cmd_pos</topic>
+      <!--<topic>/model/winghead/fore_wing/cmd_pos</topic>-->
+      <sub_topic>servo_0</sub_topic>
       <p_gain>330</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
@@ -883,6 +888,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_1</jointName>
@@ -899,6 +905,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_2</jointName>
@@ -915,6 +922,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_3</jointName>
@@ -931,6 +939,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_4</jointName>
@@ -947,6 +956,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_5</jointName>
@@ -963,6 +973,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_6</jointName>
@@ -979,6 +990,7 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
     <plugin filename="gz-sim-multicopter-motor-model-system" name="gz::sim::systems::MulticopterMotorModel">
       <jointName>revolute_7</jointName>
@@ -995,9 +1007,90 @@
       <rollingMomentCoefficient>1e-06</rollingMomentCoefficient>
       <rotorVelocitySlowdownSim>10</rotorVelocitySlowdownSim>
       <robotNamespace>winghead_0</robotNamespace>
+      <motorType>velocity</motorType>
     </plugin>
-      <plugin filename="gz-sim-joint-state-publisher-system"
+    <plugin filename="gz-sim-joint-state-publisher-system"
           name="gz::sim::systems::JointStatePublisher"/>
+    <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+      <a0>0.05984281113</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>0.0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.05 0.3 0.05</cp>
+      <area>0.5</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>
+        joint_fore_wing_left_1
+      </control_joint_name>
+      <control_joint_rad_to_cl>-1.0</control_joint_rad_to_cl>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+      <a0>0.05984281113</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>0.0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.05 0.3 0.05</cp>
+      <area>0.5</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>
+        joint_fore_wing_right_1
+      </control_joint_name>
+      <control_joint_rad_to_cl>-1.0</control_joint_rad_to_cl>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+      <a0>0.05984281113</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>0.0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.05 0.3 0.05</cp>
+      <area>0.5</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>
+        joint_aft_wing_left_1
+      </control_joint_name>
+      <control_joint_rad_to_cl>-1.0</control_joint_rad_to_cl>
+    </plugin>
+    <plugin filename="gz-sim-lift-drag-system" name="gz::sim::systems::LiftDrag">
+      <a0>0.05984281113</a0>
+      <cla>4.752798721</cla>
+      <cda>0.6417112299</cda>
+      <cma>0.0</cma>
+      <alpha_stall>0.3391428111</alpha_stall>
+      <cla_stall>-3.85</cla_stall>
+      <cda_stall>-0.9233984055</cda_stall>
+      <cma_stall>0</cma_stall>
+      <cp>-0.05 0.3 0.05</cp>
+      <area>0.5</area>
+      <air_density>1.2041</air_density>
+      <forward>1 0 0</forward>
+      <upward>0 0 1</upward>
+      <link_name>base_link</link_name>
+      <control_joint_name>
+        joint_aft_wing_right_1
+      </control_joint_name>
+      <control_joint_rad_to_cl>-1.0</control_joint_rad_to_cl>
+    </plugin>
 </model>
 
 </sdf>
