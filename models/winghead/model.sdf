@@ -947,7 +947,7 @@
     </joint>
     <!-- control-surface joints -->
     <joint name="back_wing_outboard_left_joint" type="revolute">
-      <pose relative_to="__model__">-0.7345250644 0.9298827722 0.7237239102 0 0 1.570796327</pose>
+      <pose relative_to="__model__">-0.7345250644 1.21051169848 0.7237239102 0 0 1.570796327</pose>
       <parent>back_left_wing_1</parent>
       <child>back_wing_outboard_left_1</child>
       <axis>
@@ -959,7 +959,7 @@
       </axis>
     </joint>
     <joint name="back_wing_inboard_left_joint" type="revolute">
-      <pose relative_to="__model__">-0.7345250889 0.8348826956 0.7222905174 0 0 1.570796327</pose>
+      <pose relative_to="__model__">-0.7345250889 0.61051169848 0.7222905174 0 0 1.570796327</pose>
       <parent>back_left_wing_1</parent>
       <child>back_wing_inboard_left_1</child>
       <axis>
@@ -971,7 +971,7 @@
       </axis>
     </joint>
     <joint name="back_wing_outboard_right_joint" type="revolute">
-      <pose relative_to="__model__">-0.7376441879 -0.9301169833 0.7275029498 0 0 1.570796327</pose>
+      <pose relative_to="__model__">-0.7376441879 -1.21051169848 0.7275029498 0 0 1.570796327</pose>
       <parent>back_right_wing_1</parent>
       <child>back_wing_outboard_right_1</child>
       <axis>
@@ -983,7 +983,7 @@
       </axis>
     </joint>
     <joint name="back_wing_inboard_right_joint" type="revolute">
-      <pose relative_to="__model__">-0.7377882808 -0.8351169848 0.7291491168 0 0 1.570796327</pose>
+      <pose relative_to="__model__">-0.7377882808 -0.61051169848 0.7291491168 0 0 1.570796327</pose>
       <parent>back_right_wing_1</parent>
       <child>back_wing_inboard_right_1</child>
       <axis>
