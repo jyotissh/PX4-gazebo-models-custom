@@ -26,7 +26,7 @@
     <link name="base_link">
       <pose relative_to="__model__">0 0 0 0 0 1.570796327</pose>
       <inertial>
-        <pose>-0.000143 0.0576 0.6222 0 0 0</pose>
+        <pose>0 0 0 0 0 0</pose>
         <mass>45</mass>
         <inertia>
           <ixx>13.84120695</ixx>
@@ -64,7 +64,7 @@
         </material>
       </visual>
       <collision name="chassis_1__nowing_collision">
-        <pose relative_to="__model__">0.011242099 -0.02470113371 0.5277318749 -0.10472 0 1.570796327</pose>
+        <pose relative_to="__model__">0.011242099 -0.02470113371 0.5277318749 -0.10472 0 0</pose>
         <geometry>
           <box>
             <size>0.9370112509021138 2.2971406984031018 0.9012058877333206</size>
