@@ -38,6 +38,7 @@
         </inertia>
       </inertial>
       <visual name="chassis_1__nowing_visual">
+        <pose>0 0 0 0.10472 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -51,6 +52,7 @@
         </material>
       </visual>
       <visual name="chassis_1__nowing_1_visual">
+        <pose>0 0 0 0.10472 0 0</pose>
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
@@ -64,10 +66,10 @@
         </material>
       </visual>
       <collision name="chassis_1__nowing_collision">
-        <pose relative_to="__model__">0.011242099 -0.02470113371 0.9177318749 0 0 0</pose>
+        <pose relative_to="__model__">0.011242099 -0.02470113371 0.6841 0 0 0</pose>
         <geometry>
           <box>
-            <size>0.9370112509021138 2.2971406984031018 0.9012058877333206</size>
+            <size>0.9370112509021138 2.2971406984031018 1.2</size>
           </box>
         </geometry>
       </collision>
@@ -208,7 +210,7 @@
     </joint>
     <!-- tilt wing -->
     <link name="back_left_wing_1">
-      <pose relative_to="__model__">0.1465033417 -0.1000000541 1.658414197 -1.570796327 1.870742073e-07 1.570796069</pose>
+      <pose relative_to="__model__">0.249971433 -0.100000054 1.512789655 -1.418952682 0.000000224 1.570796101</pose>
       <inertial>
         <pose>1.0717380998936898 0.8208165154176735 0.8996870242357353 0.03510277800704637 -2.574855567105092e-07 -1.8707420729732549e-07</pose>
         <mass>7.435897652</mass>
@@ -318,7 +320,7 @@
       </visual>
     </link>
     <link name="back_right_wing_1">
-      <pose relative_to="__model__">0.1405596792 0.09999975426 1.665668794 -1.570796327 -8.831453696e-07 1.570796758</pose>
+      <pose relative_to="__model__">0.246072241 0.099999754 1.519354723 -1.417905485 -0.000000938 1.570796619</pose>
       <inertial>
         <pose>-1.0721744052553597 0.8231447975084745 0.8963814844335302 0.016958784285872545 4.3110191115970794e-07 8.831453695884379e-07</pose>
         <mass>7.43530704</mass>
@@ -428,7 +430,7 @@
       </visual>
     </link>
     <link name="fore_left_wing_1">
-      <pose relative_to="__model__">-0.006616617588 -0.08465911865 0.0789856765 5.748183219e-18 -1.721999307e-33 1.570796327</pose>
+      <pose relative_to="__model__">-0.054676712 -0.084659119 0.195008652 0.105766953 0.0 1.570796327</pose>
       <inertial>
         <pose>0.9071666509459858 -1.06731731928809 0.4609503317590452 -1.4660765716752369 1.721999306934898e-33 7.975529894915112e-47</pose>
         <mass>7.46989774</mass>
@@ -510,7 +512,7 @@
       </visual>
     </link>
     <link name="fore_right_wing_1">
-      <pose relative_to="__model__">-0.02115010815 0.1253419113 0.08894396586 2.236034911e-16 0 1.570796327</pose>
+      <pose relative_to="__model__">-0.067995718 0.125341911 0.204700784 0.105766953 0.0 1.570796327</pose>
       <inertial>
         <pose>-0.9480820031334014 -1.0673443558017615 0.46093801530508405 -1.4835298641951802 -0.0 0.0</pose>
         <mass>7.46946329</mass>
@@ -831,8 +833,8 @@
       <axis>
         <xyz expressed_in="__model__">0 1 0</xyz>
         <limit>
-          <lower>-0.10472</lower>
-          <upper>1.65</upper>
+          <lower>0</lower>
+          <upper>1.4661</upper>
           <effort>2000</effort>
           <velocity>20</velocity>
         </limit>
@@ -845,8 +847,8 @@
       <axis>
         <xyz expressed_in="__model__">0 1 0</xyz>
         <limit>
-          <lower>-0.10472</lower>
-          <upper>1.65</upper>
+          <lower>0</lower>
+          <upper>1.4661</upper>
           <effort>2000</effort>
           <velocity>20</velocity>
         </limit>
@@ -859,8 +861,8 @@
       <axis>
         <xyz expressed_in="__model__">0 1 0</xyz>
         <limit>
-          <lower>-0.10472</lower>
-          <upper>1.65</upper>
+          <lower>0</lower>
+          <upper>1.4661</upper>
           <effort>2000</effort>
           <velocity>20</velocity>
         </limit>
@@ -873,8 +875,8 @@
       <axis>
         <xyz expressed_in="__model__">0 1 0</xyz>
         <limit>
-          <lower>-0.10472</lower>
-          <upper>1.65</upper>
+          <lower>0</lower>
+          <upper>1.4661</upper>
           <effort>2000</effort>
           <velocity>20</velocity>
         </limit>
@@ -1020,7 +1022,7 @@
       <p_gain>300</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
-      <initial_position>-0.10472</initial_position>
+      <initial_position>0</initial_position>
       <sub_topic>servo_6</sub_topic>
     </plugin>
     <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
@@ -1028,7 +1030,7 @@
       <p_gain>300</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
-      <initial_position>-0.10472</initial_position>
+      <initial_position>0</initial_position>
       <sub_topic>servo_6</sub_topic>
     </plugin>
     <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
@@ -1036,7 +1038,7 @@
       <p_gain>300</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
-      <initial_position>-0.10472</initial_position>
+      <initial_position>0</initial_position>
       <sub_topic>servo_6</sub_topic>
     </plugin>
     <plugin filename="gz-sim-joint-position-controller-system" name="gz::sim::systems::JointPositionController">
@@ -1044,7 +1046,7 @@
       <p_gain>300</p_gain>
       <i_gain>20</i_gain>
       <d_gain>5.5</d_gain>
-      <initial_position>-0.10472</initial_position>
+      <initial_position>0</initial_position>
       <sub_topic>servo_6</sub_topic>
     </plugin>
     <!-- Control surface plugin -->
